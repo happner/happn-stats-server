@@ -91,16 +91,20 @@ These are built-in happn-stats metrics
 .es(index=happn-stats, timefield='timestamp', metric='avg:_clients').lines(width=1.5).color('orange').label('Connected Clients')
 ```
 
-### 7. Uninstall
+
+
+### 7. Instrument your application
+
+Increment counters and set gauges using the [happn-stats client](https://github.com/happner/happn-stats#example1).
+
+#  
+
+### ?. Uninstall
 
 ```
 docker-compose stop
 docker-compose rm
 ```
-
-
-
-#  
 
 ### xxx. Per service restarting
 
