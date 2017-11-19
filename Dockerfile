@@ -1,6 +1,6 @@
 FROM node:4
 WORKDIR /app
-EXPOSE 8080
+EXPOSE 49494 
 ADD . /app
 RUN npm install
 CMD npm start
