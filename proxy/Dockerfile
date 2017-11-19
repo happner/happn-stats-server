@@ -1,4 +1,4 @@
-from node:4
+FROM node:4
 WORKDIR /app
 EXPOSE 49494
 ADD . /app
