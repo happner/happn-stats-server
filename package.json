@@ -4,7 +4,7 @@
   "description": "Docker Happn Stats Server",
   "main": "index.js",
   "scripts": {
-    "start": "happn-stats --debug --interval $REPORT_INTERVAL --fragments $FRAGMENTS_PER_REPORT --plugin happn-stats-elasticsearch"
+    "start": "happn-stats --debug --interval $REPORT_INTERVAL --fragments $FRAGMENTS_PER_INTERVAL --plugin happn-stats-elasticsearch"
   },
   "repository": {
     "type": "git",

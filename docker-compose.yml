@@ -30,7 +30,7 @@ services:
       - '49494:49494'
     environment:
       REPORT_INTERVAL: 1000
-      FRAGMENTS_PER_REPORT: 5
+      FRAGMENTS: 5
       ELASTIC_URL: http://elasticsearch:9200
       ELASTIC_INDEX: happn-stats
       ELASTIC_TYPE: happn-stats
