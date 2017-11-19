@@ -36,7 +36,7 @@ Bug: If "No such network" error, try "sudo docker-compose up" and then kill it a
 
 That will also have them restart at system reboot provided the docker service itself is configured as such.
 
-Note: The happn-stats service will silently fail a few times and then succeed when the elasticseach servic e is up.
+Note: The happn-stats service will silently fail a few times and then succeed when the elasticseach service is up.
 
 ### 3. Debugging
 
