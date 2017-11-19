@@ -22,7 +22,23 @@ cd happn-stats-server
 
 
 
-### 2. Install and start the services
+### 2. Add/Reset proxy passwords
+
+The proxy service docker instance mounts the `www` directory. This allows changes to the `users.htpasswd` outside the container to affect the running proxy inside the container.
+
+Use the `htpasswd` utility to add/modify users.
+
+```
+# on ubuntu the htpasswd util is part of apache2-utils
+# sudo apt-get install apache2-utils
+
+htpasswd www/users.htpasswd admin
+htpasswd www/users.htpasswd yourusername
+```
+
+
+
+### 3. Install and start the services
 
 ```
 # requires sudo on linux
@@ -38,7 +54,9 @@ That will also have them restart at system reboot provided the docker service it
 
 Note: The happn-stats service will silently fail a few times and then succeed when the elasticseach service is up.
 
-### 3. Debugging
+
+
+### 4. Debugging
 
 Use the service name from the `docker-compose.yml`
 
@@ -47,24 +65,6 @@ docker-compose logs --follow happn-stats
 ```
 
 More: [https://docs.docker.com/compose/reference/overview/](https://docs.docker.com/compose/reference/overview/)
-
-
-
-### 4. Add/Reset proxy passwords
-
-The proxy service docker instance mounts the `www` directory. This allows changes to the `users.htpasswd` outside the container to affect the running proxy inside the container.
-
-Has pre-configured admin user with "admin" password.
-
-Use the `htpasswd` utility to add modify users.
-
-```
-# on ubuntu the htpasswd util is part of apache2-utils
-# sudo apt-get install apache2-utils
-
-htpasswd www/users.htpasswd admin
-htpasswd www/users.htpasswd yourusername
-```
 
 
 
