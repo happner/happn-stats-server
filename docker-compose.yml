@@ -22,7 +22,7 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ${PWD}/www:/var/www
+      - ./www:/var/www
   happn-stats:
     build: .
     restart: always

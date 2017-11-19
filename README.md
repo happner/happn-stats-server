@@ -59,6 +59,9 @@ Has pre-configured admin user with "admin" password.
 Use the `htpasswd` utility to add modify users.
 
 ```
+# on ubuntu the htpasswd util is part of apache2-utils
+# sudo apt-get install apache2-utils
+
 htpasswd www/users.htpasswd admin
 htpasswd www/users.htpasswd yourusername
 ```
