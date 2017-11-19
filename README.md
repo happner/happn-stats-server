@@ -50,7 +50,9 @@ More: [https://docs.docker.com/compose/reference/overview/](https://docs.docker.
 
 ### 4. Add/Reset proxy passwords
 
-The proxy service docker instance mounts the `www` This allows changes to the `users.htpasswd` outside the container to affect the running proxy in the container.
+The proxy service docker instance mounts the `www` directory. This allows changes to the `users.htpasswd` outside the container to affect the running proxy inside the container.
+
+Has pre-configured admin user with "admin" password.
 
 Use the `htpasswd` utility to add modify users.
 
