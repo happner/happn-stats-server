@@ -25,6 +25,8 @@ cd happn-stats-server
 ### 2. Install and start the services
 
 ```
+# requires sudo on linux
+
 docker-compose create
 docker-compose build
 docker-compose start
