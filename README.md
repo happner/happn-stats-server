@@ -24,9 +24,9 @@ cd happn-stats-server
 
 ### 2. Add/Reset proxy passwords
 
-The proxy service docker instance mounts the `www` directory. This allows changes to the `users.htpasswd` outside the container to affect the running proxy inside the container.
-
 Use the `htpasswd` utility to add/modify users.
+
+Adding users after starting the services will require a restart of the proxy: `docker-compose restart proxy`
 
 ```
 # on ubuntu the htpasswd util is part of apache2-utils
@@ -115,9 +115,9 @@ docker-compose rm
 Per service names in `docker-compose.yml`
 
 ```
-docker-compose restart elasticsearch
-docker-compose stop elasticsearch
-docker-compose start elasticsearch
+docker-compose restart proxy
+docker-compose stop proxy
+docker-compose start proxy
 ```
 
 ### xxx. Modify code or config of particular service
