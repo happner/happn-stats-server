@@ -25,23 +25,23 @@ cd happn-stats-server
 ### 2. Install and start the services
 
 ```
-sudo docker-compose create
-sudo docker-compose build
-sudo docker-compose start
+docker-compose create
+docker-compose build
+docker-compose start
 
 Bug: If "No such network" error, try "sudo docker-compose up" and then kill it after a while. Then do the start again.
 ```
 
 That will also have them restart at system reboot provided the docker service itself is configured as such.
 
-
+Note: The happn-stats service will silently fail a few times and then succeed when the elasticseach servic e is up.
 
 ### 3. Debugging
 
 Use the service name from the `docker-compose.yml`
 
 ```
-sudo docker-compose logs --follow happner-stats
+docker-compose logs --follow happn-stats
 ```
 
 More: [https://docs.docker.com/compose/reference/overview/](https://docs.docker.com/compose/reference/overview/)
@@ -86,6 +86,15 @@ These are built-in happn-stats metrics
 .es(index=happn-stats, timefield='timestamp', metric='avg:_clients').lines(width=1.5).color('orange').label('Connected Clients')
 ```
 
+### 7. Uninstall
+
+```
+docker-compose stop
+docker-compose rm
+```
+
+
+
 #  
 
 ### xxx. Per service restarting
@@ -93,9 +102,9 @@ These are built-in happn-stats metrics
 Per service names in `docker-compose.yml`
 
 ```
-sudo docker-compose restart elasticsearch
-sudo docker-compose stop elasticsearch
-sudo docker-compose start elasticsearch
+docker-compose restart elasticsearch
+docker-compose stop elasticsearch
+docker-compose start elasticsearch
 ```
 
 ### xxx. Modify code or config of particular service
@@ -107,12 +116,5 @@ docker-compose rm happn-stats
 docker-compose build happn-stats
 docker-compose create happn-stats
 docker-compose start happn-stats
-```
-
-### xxx. Uninstall all
-
-```
-docker-compose stop
-docker-compose rm
 ```
 
