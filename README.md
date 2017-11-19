@@ -32,8 +32,12 @@ Use the `htpasswd` utility to add/modify users.
 # on ubuntu the htpasswd util is part of apache2-utils
 # sudo apt-get install apache2-utils
 
-htpasswd www/users.htpasswd admin
-htpasswd www/users.htpasswd yourusername
+# first user, -c to create file
+htpasswd -c www/users.htpasswd yourusername
+
+# subsequent users, NB not -c
+htpasswd www/users.htpasswd username
+
 ```
 
 
