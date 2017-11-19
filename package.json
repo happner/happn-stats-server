@@ -4,7 +4,7 @@
   "description": "Docker Happn Stats Server",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "happn-stats --debug --interval $REPORT_INTERVAL --fragments $FRAGMENTS_PER_REPORT --plugin happn-stats-elasticsearch"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/happner/happn-stats-server/issues"
   },
-  "homepage": "https://github.com/happner/happn-stats-server#readme"
+  "homepage": "https://github.com/happner/happn-stats-server#readme",
+  "dependencies": {
+    "happn-stats": "^1.0.3",
+    "happn-stats-elasticsearch": "^1.0.1"
+  }
 }

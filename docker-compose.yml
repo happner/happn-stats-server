@@ -16,3 +16,21 @@ services:
     environment:
       xpack.security.enabled: 'false'
       xpack.monitoring.ui.container.elasticsearch.enabled: 'false'
+  proxy:
+    build: proxy
+    restart: always
+    ports:
+      - '8080:8080'
+    volumes:
+      - ${PWD}/www:/var/www
+  happn-stats:
+    build: .
+    restart: always
+    ports:
+      - '49494:49494'
+    environment:
+      REPORT_INTERVAL: 1000
+      FRAGMENTS_PER_REPORT: 5
+      ELASTIC_URL: http://elasticsearch:9200
+      ELASTIC_INDEX: happn-stats
+      ELASTIC_TYPE: happn-stats
