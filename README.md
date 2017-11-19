@@ -108,3 +108,11 @@ docker-compose build happn-stats
 docker-compose create happn-stats
 docker-compose start happn-stats
 ```
+
+### xxx. Uninstall all
+
+```
+docker-compose stop
+docker-compose rm
+```
+
