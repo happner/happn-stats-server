@@ -19,6 +19,6 @@
   "homepage": "https://github.com/happner/happn-stats-server#readme",
   "dependencies": {
     "happn-stats": "^1.0.3",
-    "happn-stats-elasticsearch": "^1.0.1"
+    "happn-stats-elasticsearch": "^1.0.2"
   }
 }
