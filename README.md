@@ -82,17 +82,17 @@ Select `happn-stats` as kibana "index pattern" and `timestamp` as the "Time Filt
 
 ### 6. Create timelion graphs
 
-These are built-in happn-stats metrics
+These are built-in happn-stats metrics (in kibana 6.0.0 .es() statements are delimityd by comma)
 
 ```
 // happn-stats fragments per second
-.es(index=happn-stats, timefield='timestamp', metric='avg:_fragments').lines(width=1.5).color('orange').label('Fragments per Second')
+.es(index=happn-stats, timefield='timestamp', metric='avg:_fragments').lines(width=1.5).color('orange').label('Fragments per Second'),
 
 // happn-stats bytes per second
-.es(index=happn-stats, timefield='timestamp', metric='avg:_bytes').lines(width=1.5).color('orange').label('Bytes per Second')
+.es(index=happn-stats, timefield='timestamp', metric='avg:_bytes').lines(width=1.5).color('orange').label('Bytes per Second'), 
 
 // happn-stats connected clients
-.es(index=happn-stats, timefield='timestamp', metric='avg:_clients').lines(width=1.5).color('orange').label('Connected Clients')
+.es(index=happn-stats, timefield='timestamp', metric='avg:_clients').lines(width=1.5).color('orange').label('Connected Clients'), 
 ```
 
 
